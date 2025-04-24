@@ -40,3 +40,39 @@ def get_adj_map(facets):
     adj_map[facet_to_tuple(facet)] = list(adj_facets)
 
   return adj_map
+
+def _decompose(path, adj_map):
+  if len(path) == len(adj_map):
+    # Fully decomposed stl
+    return path
+
+  # Look at facets adjacent to last added to path
+  for adjacent_facet in adj_map[path[-1]]:
+    # This facet is already in the path, skip
+    if adjacent_facet in path:
+      continue
+
+    rec = _decompose(path + [adjacent_facet], adj_map)
+
+    # On the golden path, return
+    if rec:
+      return rec
+
+  # Dead end
+  return None
+
+# Remove facet by facet such that a facet removed is always adjacent with the prior facet removed.
+def decompose(facets):
+  adj_map = get_adj_map(facets)
+
+  for facet in facets:
+    facet = facet_to_tuple(facet)
+
+    path = [facet]
+
+    path = _decompose(path, adj_map)
+
+    if path:
+      return path
+
+  raise Exception('Unable to find decomposition')
