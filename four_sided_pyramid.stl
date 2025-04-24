@@ -1,0 +1,49 @@
+solid square_pyramid
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex -1.0 -1.0 0.0
+      vertex  1.0 -1.0 0.0
+      vertex  1.0  1.0 0.0
+    endloop
+  endfacet
+
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex -1.0 -1.0 0.0
+      vertex  1.0  1.0 0.0
+      vertex -1.0  1.0 0.0
+    endloop
+  endfacet
+
+  facet normal 0.0 -0.894427 0.447214
+    outer loop
+      vertex -1.0 -1.0 0.0
+      vertex  0.0  0.0 2.0
+      vertex  1.0 -1.0 0.0
+    endloop
+  endfacet
+
+  facet normal 0.894427 0.0 0.447214
+    outer loop
+      vertex  1.0 -1.0 0.0
+      vertex  0.0  0.0 2.0
+      vertex  1.0  1.0 0.0
+    endloop
+  endfacet
+
+  facet normal 0.0 0.894427 0.447214
+    outer loop
+      vertex  1.0  1.0 0.0
+      vertex  0.0  0.0 2.0
+      vertex -1.0  1.0 0.0
+    endloop
+  endfacet
+
+  facet normal -0.894427 0.0 0.447214
+    outer loop
+      vertex -1.0  1.0 0.0
+      vertex  0.0  0.0 2.0
+      vertex -1.0 -1.0 0.0
+    endloop
+  endfacet
+endsolid square_pyramid
